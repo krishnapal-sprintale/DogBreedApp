@@ -1,22 +1,18 @@
 class DogBreedsController < ApplicationController
-  def new
-    @dog_breed = DogBreed.new
+  def index
   end
 
-  def create
-    @dog_breed = DogBreed.new(dog_breed_params)
-    if @dog_breed.save
-      render json: { name: @dog_breed.name, image_url: fetch_dog_image(@dog_breed.name) }
+  def fetch_dog_info
+    @dog_image = fetch_dog_image(params[:name])
+    if @dog_image.present?
+      @dog_breed_name = params[:name]
+      render json: { dog_breed_name: @dog_breed_name, dog_image: @dog_image }
     else
-      render json: { error: @dog_breed.errors.full_messages }, status: :unprocessable_entity
+      render json: { error: "Breed not present with the name #{params[:name]}" }, status: :unprocessable_entity
     end
   end
 
   private
-
-  def dog_breed_params
-    params.require(:dog_breed).permit(:name)
-  end
 
   def fetch_dog_image(breed)
     response = Faraday.get("https://dog.ceo/api/breed/#{breed.downcase}/images/random")
