@@ -29,7 +29,7 @@
   function displayDogImage(breed, imageUrl) {
     const resultContainer = document.getElementById('dog-breed-result');
     resultContainer.innerHTML = `
-      <h2>Result: ${breed}</h2>
+      <h2>${breed}</h2>
       <img id="dogImage" src="${imageUrl}" alt="Dog Image">
     `;
   }
