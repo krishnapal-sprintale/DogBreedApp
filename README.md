@@ -1,24 +1,44 @@
-# README
+# Doge-CEO Web Form
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple web form that fetches a dog breed image from the Dog CEO API and displays it along with the submitted dog breed name.
 
-Things you may want to cover:
+## Technical Stack
 
-* Ruby version
+- Ruby version: ruby-3.0.0
+- Rails version: rails-7.0.8
+- jQuery-ujs
+- Ajax
+- Bootstrap
+- Rails service
+- API calling
+- HTML
+- CSS
+- JavaScript
 
-* System dependencies
+## Installation
 
-* Configuration
+1. Set up Ruby and Rails versions.
+2. Clone the repository:
 
-* Database creation
+    ```bash
+    git clone https://github.com/ravi-sprintale/doge-ceo.git
+    ```
 
-* Database initialization
+3. Install dependencies:
 
-* How to run the test suite
+    ```bash
+    bundle install
+    ```
 
-* Services (job queues, cache servers, search engines, etc.)
+4. Start the server:
 
-* Deployment instructions
+    ```bash
+    rails s
+    ```
 
-* ...
+## Usage
+
+1. Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
+2. Fill in the dog breed in the "Breed" input field.
+3. Click the "Submit" button to fetch and display the dog breed image.
+
